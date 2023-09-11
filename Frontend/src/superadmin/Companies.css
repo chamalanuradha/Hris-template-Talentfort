@@ -1,0 +1,130 @@
+.main-body{
+    display: flex;
+  }
+  .company {
+    width: 100%;
+    margin-right:10px;
+    margin-left: 210px;
+  }
+  .Add {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+   background-color: rgb(50, 199, 65);
+    border-radius: 5px;
+    border: 1px solid rgb(17, 88, 24);
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 16%;
+    height: 50px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .Add:hover {
+    background-color: rgb(38, 145, 48);
+    
+  }
+  .Addcmp{
+    color: black; 
+    padding: 10px 15px;
+    text-decoration: none;
+    width: 100%;
+  }
+  .actions {
+    display: flex;
+  }
+  
+  .update{
+    font-size: 22px;
+   
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    color: #007bff;
+  }
+  .delete {
+   
+    font-size: 19px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    color: #ff120e;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+  
+  .search input {
+    width: 400px;
+    height: 43px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #007bff;
+  }
+  
+  .search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .search-button:hover {
+    background-color: #0366d6;
+  
+  }
+  thead {
+    border-bottom: 1px solid #000;
+    
+  }
+  
+  th {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    text-align: center;
+  }
+  td{
+    font-size: 14px;
+    text-align: left;
+  }
+  .action-btn{
+    text-align: center;
+  }
+  
+  
+  
+  
+  /* Responsive styles */
+  /* @media screen and (max-width: 768px) {
+    .search input {
+      width: 150px;
+    }
+    
+    .search-button {
+      padding: 8px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .search input {
+      width: 100px;
+      font-size: 14px;
+    }
+    
+    .search-button {
+      padding: 6px;
+      font-size: 14px;
+    }
+  } */
+  

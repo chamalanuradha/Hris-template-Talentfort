@@ -1,0 +1,97 @@
+.sidebar {
+    background: #000; 
+    color: #fff;
+    height: 100vh;
+    width: 50px;
+    position:fixed;
+    overflow-y: auto;
+    transition: width 0.3s;
+    border-left: 1px solid white;
+    
+
+}
+.sidebar::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* You can also set this to 'none' if you want to completely remove the scrollbar */
+}
+.top_section{
+    display: flex;
+    align-items:center;
+    padding:16px 15px;
+  
+}
+
+.logo{
+    font-size: 23px;
+}
+.bars{
+    display: flex;
+    font-size: 25px;
+ 
+    
+}
+.link{
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 15px;
+    gap: 15px;
+    transition: all 0.5s;
+}
+
+.submenu-link{
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    padding: 6px 15px;
+    gap: 15px;
+    transition: all 0.5s;
+
+}
+.link:hover{
+    background:lightskyblue;
+    color: #000;
+    transition: all 0.5s;
+}
+.submenu-link:hover{
+    background:lightskyblue;
+    color: #000;
+    transition: all 0.5s;
+
+}
+.active{
+    background: lightskyblue;
+    color: #000;
+}
+.icon1{
+    font-size: 21px;
+    margin :0
+}
+.icon2{
+    font-size: 20px;
+    margin :0
+}
+.link_text{
+    width:160px;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 1px;
+}
+.submenu_link_text{
+    width:160px;
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 1px;
+}
+  
+.submenu-link.active {
+    background-color: lightskyblue;
+}
+.link.Reports.active {
+    background-color: lightskyblue;
+  }
+  .btn.btn-primary.logout{
+    margin-left: 70px;
+    margin-top: 100px;
+    margin-bottom: 24px;
+  }

@@ -1,0 +1,42 @@
+.main-body{
+    display: flex;
+  }
+  .adduser{
+    width: 100%;
+    margin-right:10px;
+    margin-left: 210px;
+  }
+  
+  .form-label{
+      font-size: 18px;
+      font-weight: 500;
+      color: #333333;
+      margin-bottom: 5px;
+  }
+  .form-check-label{
+      font-size: 17px;
+      color: #333333;
+  }
+  .buttons {
+     
+    width: 25%;
+      display: flex;
+      justify-content: center;
+      margin-left: 15%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+     
+    }
+    
+    .save-button {
+      flex: 1;
+      margin-right: 10px;
+      }
+    
+    .reset-button {
+      flex: 1;
+    }
+    
+    .btn {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }

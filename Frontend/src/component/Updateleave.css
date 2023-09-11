@@ -1,0 +1,24 @@
+.main-body{
+    display: flex;
+  }
+  .updateleave{
+    width: 100%;
+    margin-right:10px;
+    margin-left: 210px;
+  }.buttons {
+     
+      width: 55%;
+      display: flex;
+      justify-content: center;
+      margin-left: 22.5%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+     
+    }
+    .update-button {
+      flex: 1;
+      margin-right: 10px;
+      }
+      .btn {
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }

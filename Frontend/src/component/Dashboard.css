@@ -1,0 +1,71 @@
+.main-body{
+  display: flex;
+}
+
+.dashboard {
+  margin-left: 210px;
+
+}
+
+.card-employees {
+  background: rgb(60, 44, 158);
+}
+.card-loans {
+  background: rgb(60, 44, 158);
+}
+
+.card-payments {
+  background: rgb(60, 44, 158);
+}
+
+.card-leaves {
+  background:rgb(60, 44, 158);
+}
+.card {
+  padding-top:  20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  }
+  
+  .card h2 {
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+  }
+  .details{
+    margin-left: 5px;
+    margin-top : 5px;
+    color: rgb(253, 253, 253);
+    font-size: 18px;
+  }
+
+/* styles.css */
+/* 
+  
+ 
+
+ 
+
+  
+  .graph1, .graph2, .graph3 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .graph1, .graph2, .graph3 h4{
+    color: rgb(57, 57, 57);
+  }
+  
+  .graph1 {
+    margin-bottom: 20px;
+  }
+  .graph2{
+    height: fit-content;
+  } */
+  
+
+  

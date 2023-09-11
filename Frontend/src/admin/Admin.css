@@ -1,0 +1,25 @@
+.main-body{
+    display: flex;
+  }
+.dashboard {
+    margin-left: 10px;
+  
+  }
+.card {
+    background-color: blue;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  }
+  
+  .card h2 {
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+  }
+  .details{
+    margin-left: 5px;
+    margin-top : 5px;
+    color: rgb(253, 253, 253);
+    font-size: 18px;
+  }

@@ -1,0 +1,62 @@
+.main-body{
+  display: flex;
+}
+.addemployee{
+  width: 100%;
+  margin-right:10px;
+  margin-left: 210px;
+}
+.personal_details, .company_details{
+    margin: 20px 0 20px 0px;
+    padding:0 20px 20px 20px;
+    border : 2px solid #333333;
+    border-radius: 12px;
+}
+.personal_details h3, .company_details h3{
+    font-size: 23px;
+    font-weight: 600;
+    color: #333333;
+    margin: 20px 0 20px 0;
+}
+.form-label{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 5px;
+}
+.form-check-label{
+    font-size: 17px;
+    color: #333333;
+}
+.gender_full, .marital_full, .employeetype_full, .paytype_full, .workshift_full, .paygrade_full{
+    display: inline-block;
+}
+.gender_cat, .marital_cat, .employeetype_cat, .paytype_cat, .workshift_cat, .paygrade_cat{
+    margin-left: 20px;
+    display: flex;
+    gap: 30px;
+}
+.buttons {
+   
+      width: 25%;
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+  }
+  
+  .save-button {
+    flex: 1;
+    margin-right: 10px;
+    }
+  
+  .reset-button {
+    flex: 1;
+  }
+  
+  .btn {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  

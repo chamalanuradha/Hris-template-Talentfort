@@ -1,0 +1,66 @@
+.main-body{
+    display: flex;
+  }
+  .report{
+    width: 100%;
+    margin-right:10px;
+    margin-left: 210px;
+  }
+  
+  .filter_section{
+      padding:12px 0 0 12px;
+      margin-bottom: 10px;
+  }
+  .filter {
+      background-color: #007bff;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      margin-left: 80%;
+      font-weight: bold;
+    }
+    
+    .filter:hover {
+      background-color: #0056b3;
+    }
+  
+    .repos{
+      margin-left: 80%;
+      display: inline-block;
+    }
+  
+  
+  .csv{
+    background-color:rgb(50, 199, 65);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-decoration: none;
+  } 
+  .pdf{
+    background-color:rgb(50, 199, 65);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .pdf:hover {
+      background-color:rgb(17, 88, 24);
+    }
+  .csv:hover {
+      background-color:rgb(17, 88, 24);
+    }
