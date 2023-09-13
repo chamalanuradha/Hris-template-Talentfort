@@ -84,31 +84,39 @@ export default function Payments() {
   };
 
 
-  const prepareCSVData = () => {
-
-
-    const csvData = searchResults.map((payment) => [
-      "0000",
-       payment.bankNo,
-       payment.branchNo,
-       payment.accountNo,
-       payment.accountName,
-      '23',
-      '00',
-      '0',
-      '000000',
-       payment.salary,
-      'SLR',
-      '7010',
-      '038',
-      '000014556622',
-      'abc Company',
-      'BOC boralla',
-       payment.date,
-      '000000'
-    ]);
-    return [...csvData] // Concatenate headers with the data rows
-  };
+  // const prepareCSVData = () => {
+  //   const csvData = searchResults.map((payment) =>
+  //     [
+  //       "0000",
+  //       payment.bankNo,
+  //       payment.branchNo,
+  //       payment.accountNo,
+  //       payment.accountName,
+  //       '23',
+  //       '00',
+  //       '0',
+  //       '000000',
+  //       payment.salary,
+  //       'SLR',
+  //       '7010',
+  //       '038',
+  //       '000014556622',
+  //       'abc Company',
+  //       'BOC boralla',
+  //       payment.date,
+  //       '000000'
+  //     ].join('')
+  //   );
+  
+  //   // Join all the data lines into a single string with line breaks
+  //   const csvContent = csvData.join('\n');
+  
+  //   // Add headers if needed
+  //   const csvWithHeaders = `${csvContent}`;
+  
+  //   return csvWithHeaders; // or csvContent if you don't need headers
+  // };
+  
 
 
   const GeneratePDF = () => {
@@ -280,14 +288,7 @@ export default function Payments() {
   <button className='pdf' onClick={GeneratePDF}>Generate PDF</button>
   </div>
   <div>
-  <CSVLink
-    data={prepareCSVData()} // Call prepareCSVData to get the formatted data
-    filename="bankslip.csv"
-    className="csv"
-    target="_blank"
-  >
-    Genarate CSV
-  </CSVLink>
+ 
   </div>
 
 

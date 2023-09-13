@@ -38,16 +38,45 @@ export default function AddEmployee() {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    if (!employee.firstName || !employee.title || !employee.maritalStatus) {
-      alert('Please fill in all required fields.');
+  
+    const requiredFields = [
+      'firstName',
+      'lastName',
+      'title',
+      'maritalStatus',
+      'dob',
+      'nic',
+      'phone',
+      'currentAddress',
+      'country',
+      'companyName',
+      'department',
+      'salary',
+      'gender',
+      'employeeType',
+      'workShift',
+      'designation',
+      'joinedDate',
+      'payGrade',
+      'payType',
+      'empNo',
+    ];
+  
+    // Check if any of the required fields is empty
+    const missingFields = requiredFields.filter(field => !employee[field]);
+  
+    if (missingFields.length > 0) {
+      const missingFieldsList = missingFields.join(', ');
+      alert(`Please fill in all required fields: ${missingFieldsList}`);
       return;
     }
+  
     try {
       await axios.post('http://localhost:8080/employees', employee);
       alert('Employee added successfully.'); // You can show a success message if needed.
-        
-        // Navigate to the previous page with a reload
-        window.history.back();
+  
+      // Navigate to the previous page with a reload
+      window.history.back();
     } catch (error) {
       console.log(error);
     }

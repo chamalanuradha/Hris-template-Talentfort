@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Addleave.css';
 
 
+
 export default function Addleave() {
 
   const [employeeOptions, setEmployeeOptions] = useState([]);
@@ -65,12 +66,16 @@ export default function Addleave() {
 
   const handleClick = async (e) => {
     e.preventDefault();
+  
+    // Check if any of the required fields are empty
+    if (!leaveData.empNo || !leaveData.date || !leaveData.leaveHours) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+  
     try {
       await axios.post('http://localhost:8080/leaves', leaveData);
       alert('Leave added successfully.'); // You can show a success message if needed.
-        
-        // Navigate to the previous page with a reload
-        window.history.back();
     } catch (error) {
       console.log(error);
     }
