@@ -13,7 +13,7 @@ export default function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8080/login', { username, password, role });
+      const res = await axios.post('http://localhost:8081/login', { username, password, role });
       if (res.data.Login) {
         if (res.data.role === 'admin') {
           navigate('/dash');

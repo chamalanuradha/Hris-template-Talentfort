@@ -21,7 +21,7 @@ export default function Addovertime() {
     useEffect(() => {
       const fetchLeaves = async () => {
         try {
-          const res = await axios.get('http://localhost:8080/employees');
+          const res = await axios.get('http://localhost:8081/employees');
           const employees = res.data;
           setEmployeeOptions(employees);
         } catch (error) {
@@ -66,7 +66,7 @@ export default function Addovertime() {
     const handleClick = async (e) => {
       e.preventDefault();
       try {
-        await axios.post('http://localhost:8080/overtimes', overtimeData);
+        await axios.post('http://localhost:8081/overtimes', overtimeData);
         alert('overtime added successfully.'); // You can show a success message if needed.
         
         // Navigate to the previous page with a reload

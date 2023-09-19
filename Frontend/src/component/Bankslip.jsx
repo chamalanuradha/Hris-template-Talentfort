@@ -19,7 +19,7 @@ export default function Payments() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/combinedData');
+        const res = await axios.get('http://localhost:8081/combinedData');
         setSearchResults(res.data);
         const monthSet = new Set();
         const yearSet = new Set();
@@ -53,7 +53,7 @@ export default function Payments() {
 
   const handleFilter = async () => {
     try {
-      const res = await axios.get('http://localhost:8080/combinedData');
+      const res = await axios.get('http://localhost:8081/combinedData');
       const payments = res.data;
 
       let filteredResults = payments;

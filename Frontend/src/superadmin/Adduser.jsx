@@ -19,7 +19,7 @@ export default function Adduser() {
     const handleClick = async (e) => {
       e.preventDefault();
       try {
-        await axios.post('http://localhost:8080/users', userData); // Pass companyData
+        await axios.post('http://localhost:8081/users', userData); // Pass companyData
         navigate('/users');
       } catch (error) {
         console.log(error);

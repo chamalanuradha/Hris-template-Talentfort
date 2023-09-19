@@ -11,7 +11,7 @@ export default function Users() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/users');
+        const res = await axios.get('http://localhost:8081/users');
         setSearchResults(res.data);
       } catch (error) {
         console.log(error);
@@ -22,7 +22,7 @@ export default function Users() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/users');
+      const response = await axios.get('http://localhost:8081/users');
       const { data } = response;
 
       // Filter the employees whose names start with the search term
@@ -47,7 +47,7 @@ export default function Users() {
     const confirmDelete = window.confirm('Are you sure you want to delete this user?');
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:8080/users/${id}`);
+        await axios.delete(`http://localhost:8081/users/${id}`);
         window.location.reload();
       } catch (error) {
         console.log(error);

@@ -31,7 +31,7 @@ export default function Graph2() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/graph2'); 
+        const response = await axios.get('http://localhost:8081/graph2'); 
         const data = response.data;
 
         const series = data.map((item) => item.employeeCount);
