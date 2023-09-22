@@ -16,7 +16,7 @@ export default function Updateuser() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/users/${userId}`);
+        const response = await axios.get(`http://localhost:8080/users/${userId}`);
         const {username,role} = response.data;
         setUserData({
           username,
@@ -44,7 +44,7 @@ export default function Updateuser() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8081/users/${userId}`, userData); // Pass companyData
+      await axios.put(`http://localhost:8080/users/${userId}`, userData); // Pass companyData
       navigate('/users');
     } catch (error) {
       console.log(error);

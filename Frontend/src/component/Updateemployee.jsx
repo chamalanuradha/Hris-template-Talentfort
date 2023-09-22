@@ -42,7 +42,7 @@ export default function UpdateEmployee() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8081/employees/${id}`, employee);
+      await axios.put(`http://localhost:8080/employees/${id}`, employee);
       alert('Employee updated successfully.'); // You can show a success message if needed.
         
         // Navigate to the previous page with a reload
@@ -55,7 +55,7 @@ export default function UpdateEmployee() {
   useEffect(() => {
     const fetchEmployee = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/employees/${id}`);
+        const response = await axios.get(`http://localhost:8080/employees/${id}`);
         setEmployee(response.data);
       } catch (error) {
         console.log(error);
@@ -68,7 +68,7 @@ export default function UpdateEmployee() {
       try {
         const fetchCompanies = async () => {
           try {
-            const response = await axios.get('http://localhost:8081/companies');
+            const response = await axios.get('http://localhost:8080/companies');
             const companies = response.data;
             const companyNames = companies.map(company => company.companyName); // Using 'companyName' property from API response
             setCompanyNames(companyNames);

@@ -19,7 +19,7 @@ export default function AddLoan() {
   useEffect(() => {
     const fetchLoans = async () => {
       try {
-        const res = await axios.get('http://localhost:8081/employees');
+        const res = await axios.get('http://localhost:8080/employees');
         const employees = res.data;
         setEmployeeOptions(employees);
       } catch (error) {
@@ -65,7 +65,7 @@ export default function AddLoan() {
     const handleClick = async (e) => {
       e.preventDefault();
       try {
-        await axios.post('http://localhost:8081/loans', loanData);
+        await axios.post('http://localhost:8080/loans', loanData);
         alert('Loan added successfully.'); // You can show a success message if needed.
         
         // Navigate to the previous page with a reload

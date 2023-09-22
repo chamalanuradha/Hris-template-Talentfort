@@ -22,7 +22,7 @@ export default function Updateleaves() {
     const fetchLeave = async () => {
       
       try {
-        const response = await axios.get(`http://localhost:8081/leaves/${leaveId}`);
+        const response = await axios.get(`http://localhost:8080/leaves/${leaveId}`);
         const { date, leaveHours, description, empNo ,employeeName } = response.data;
         setLeaveData({
           date,
@@ -53,7 +53,7 @@ export default function Updateleaves() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8081/leaves/${leaveId}`, leaveData);
+      await axios.put(`http://localhost:8080/leaves/${leaveId}`, leaveData);
       alert('Leave updated successfully.'); // You can show a success message if needed.
         
       // Navigate to the previous page with a reload

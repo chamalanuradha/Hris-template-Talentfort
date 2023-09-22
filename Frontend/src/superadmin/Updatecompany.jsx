@@ -17,7 +17,7 @@ export default function Updatecompany() {
   useEffect(() => {
     const fetchLoan = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/companies/${companyId}`);
+        const response = await axios.get(`http://localhost:8080/companies/${companyId}`);
         const {companyName} = response.data;
         setCompanyData({
           companyName,
@@ -44,7 +44,7 @@ export default function Updatecompany() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8081/companies/${companyId}`, companyData); // Pass companyData
+      await axios.put(`http://localhost:8080/companies/${companyId}`, companyData); // Pass companyData
       navigate('/companies');
     } catch (error) {
       console.log(error);

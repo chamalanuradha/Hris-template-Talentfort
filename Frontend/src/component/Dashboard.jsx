@@ -25,7 +25,7 @@ export default function Dash() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8081/employeecount'); 
+        const response = await axios.get('http://localhost:8080/employeecount'); 
         const data = response.data;
         const count = data.employeeCount;
 
@@ -40,7 +40,7 @@ export default function Dash() {
   useEffect(()=> {
     const fetchAmount = async ()=> {
     try {
-      const response = await axios.get('http://localhost:8081/loanamount');
+      const response = await axios.get('http://localhost:8080/loanamount');
       const data = response.data;
       const count =data.loanAmount;
       setLoanAmount(count);
@@ -54,7 +54,7 @@ export default function Dash() {
   useEffect(()=> {
     const fetchOvertime = async ()=> {
     try {
-      const res = await axios.get('http://localhost:8081/totalovertime');
+      const res = await axios.get('http://localhost:8080/totalovertime');
       const data = res.data;
       const count =data.totalOvertime;
       setOvertime(count);
@@ -69,7 +69,7 @@ export default function Dash() {
   useEffect(()=> {
     const fetchLeaves = async ()=> {
     try {
-      const res = await axios.get('http://localhost:8081/totalleaves');
+      const res = await axios.get('http://localhost:8080/totalleaves');
       const data = res.data;
       const count =data.totalLeaves;
       setLeaves(count);

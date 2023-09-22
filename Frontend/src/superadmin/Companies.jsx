@@ -11,7 +11,7 @@ export default function Companies() {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const res = await axios.get('http://localhost:8081/companies');
+        const res = await axios.get('http://localhost:8080/companies');
         setSearchResults(res.data);
       } catch (error) {
         console.log(error);
@@ -22,7 +22,7 @@ export default function Companies() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get('http://localhost:8081/companies');
+      const response = await axios.get('http://localhost:8080/companies');
       const { data } = response;
 
       // Filter the employees whose names start with the search term
@@ -47,7 +47,7 @@ export default function Companies() {
     const confirmDelete = window.confirm('Are you sure you want to delete this company?');
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:8081/companies/${id}`);
+        await axios.delete(`http://localhost:8080/companies/${id}`);
         window.location.reload();
       } catch (error) {
         console.log(error);

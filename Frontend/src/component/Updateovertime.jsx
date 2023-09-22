@@ -20,7 +20,7 @@ export default function UpdateOvertime() {
   useEffect(() => {
     const fetchOvertime = async () => {
       try {
-        const overtimeRes = await axios.get(`http://localhost:8081/overtimes/${overtimeId}`);
+        const overtimeRes = await axios.get(`http://localhost:8080/overtimes/${overtimeId}`);
         const { employeeName, date, hours, empNo, rate } = overtimeRes.data;
         setOvertimeData({
           date,
@@ -49,7 +49,7 @@ export default function UpdateOvertime() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8081/overtimes/${overtimeId}`, overtimeData);
+      await axios.put(`http://localhost:8080/overtimes/${overtimeId}`, overtimeData);
       alert('Overtime updated successfully.'); // You can show a success message if needed.
         
       // Navigate to the previous page with a reload

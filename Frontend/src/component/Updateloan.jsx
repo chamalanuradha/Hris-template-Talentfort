@@ -21,7 +21,7 @@ export default function UpdateLoan() {
   useEffect(() => {
     const fetchLoan = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/loans/${loanId}`);
+        const response = await axios.get(`http://localhost:8080/loans/${loanId}`);
         const { empNo, employeeName,amount, interestRate, duration } = response.data;
         setLoanData({
           empNo,
@@ -51,7 +51,7 @@ export default function UpdateLoan() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8081/loans/${loanId}`, loanData);
+      await axios.put(`http://localhost:8080/loans/${loanId}`, loanData);
       alert('Loan updated successfully.'); // You can show a success message if needed.
         
       // Navigate to the previous page with a reload
