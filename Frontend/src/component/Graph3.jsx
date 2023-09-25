@@ -28,7 +28,7 @@ export default function Graph3() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://backend.chalanka.me/graph3');
+        const response = await axios.get('http://localhost:8080/graph3');
         const data = response.data;
 
         const categories = data.map((item) => item.department);

@@ -13,7 +13,7 @@ export default function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const res = await axios.post('http://backend.chalanka.me/login', { username, password, role });
+      const res = await axios.post('http://localhost:8080/login', { username, password, role });
       if (res.data.Login) {
         if (res.data.role === 'admin') {
           navigate('/dash');
@@ -26,7 +26,7 @@ export default function Login() {
         setLoginError('Login failed. Please check your credentials and try again.');
       }
     } catch (error) {
-      console.log(error.response.data.message);
+      console.log(error);
       setLoginError('An error occurred during login. Please try again.');
     }
   };

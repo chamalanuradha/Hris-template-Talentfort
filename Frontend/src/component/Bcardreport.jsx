@@ -17,7 +17,7 @@ export default function Bcardreport() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get('http://backend.chalanka.me/employees');
+        const res = await axios.get('http://localhost:8080/employees');
         setSearchResults(res.data);
         const empnameSet = new Set();
         res.data.forEach((Employee) => {
@@ -41,7 +41,7 @@ export default function Bcardreport() {
 
   const handleFilter = async () => {
     try {
-      const res = await axios.get('http://backend.chalanka.me/employees');
+      const res = await axios.get('http://localhost:8080/employees');
       const Employees = res.data;
 
       let filteredResults = Employees;

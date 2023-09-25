@@ -22,7 +22,7 @@ export default function Employeepaymentreport() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get('http://backend.chalanka.me/combinedData');
+        const res = await axios.get('http://localhost:8080/combinedData');
         setSearchResults(res.data);
         const empnoset = new Set();
         const monthSet = new Set();
@@ -65,7 +65,7 @@ export default function Employeepaymentreport() {
   }, []);
   const handleFilter = async () => {
     try {
-      const res = await axios.get('http://backend.chalanka.me/combinedData');
+      const res = await axios.get('http://localhost:8080/combinedData');
       const payments = res.data;
 
       let filteredResults = payments;

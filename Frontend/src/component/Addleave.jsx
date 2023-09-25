@@ -21,7 +21,7 @@ export default function Addleave() {
   useEffect(() => {
     const fetchLeaves = async () => {
       try {
-        const res = await axios.get('http://backend.chalanka.me/employees');
+        const res = await axios.get('http://localhost:8080/employees');
         const employees = res.data;
         setEmployeeOptions(employees);
       } catch (error) {
@@ -74,7 +74,7 @@ export default function Addleave() {
     }
   
     try {
-      await axios.post('http://backend.chalanka.me/leaves', leaveData);
+      await axios.post('http://localhost:8080/leaves', leaveData);
       alert('Leave added successfully.'); // You can show a success message if needed.
     } catch (error) {
       console.log(error);

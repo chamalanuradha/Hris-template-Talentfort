@@ -9,7 +9,7 @@ DB.connect();
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'http://chalanka.me',
   credentials: true,
   exposedHeaders: ['Access-Control-Allow-Credentials'],
 }));
@@ -161,16 +161,16 @@ app.get('/leaves', (req, res) => {
 //get overtime details
 app.get('/overtimes', (req, res) => {
   DB.connection.promise()
-    .query('SELECT * FROM Overtimes')
+    .query('SELECT * FROM overtimes')
     .then(([results]) => {
-      const overtimes = results.map((overtime) => ({
-        id: overtime.id,
-        employeeName: overtime.employeeName,
-        empNo: overtime.empNo,
-         date:overtime.date,
-        hours: overtime.hours,
-        rate: overtime.rate,
-        payment: overtime.payment,
+      const overtimes = results.map((result) => ({
+        id: result.id,
+        employeeName: result.employeeName,
+        empNo: result.empNo,
+         date:result.date,
+        hours: result.hours,
+        rate: result.rate,
+        payment: result.payment,
       }));
       res.json(overtimes);
     })
@@ -184,10 +184,10 @@ app.get('/overtimes', (req, res) => {
 app.get('/users', (req, res) => {
   DB.connection.promise().query('SELECT * FROM users')
     .then(([results]) => {
-      const users = results.map((user) => ({
-        id: user.id,
-        username: user.username,
-        role: user.role,
+      const users = results.map((result) => ({
+        id: result.id,
+        username: result.username,
+        role: result.role,
       }));
       res.json(users);
     })
@@ -203,9 +203,9 @@ app.get('/users', (req, res) => {
 app.get('/companies', (req, res) => {
   DB.connection.promise().query('SELECT * FROM companies')
     .then(([results]) => {
-      const companies = results.map((company) => ({
-        id: company.id,
-        companyName: company.companyName,
+      const companies = results.map((result) => ({
+        id: result.id,
+        companyName: result.companyName,
       }));
       res.json(companies);
     })
@@ -1281,5 +1281,5 @@ app.get('/totalleaves', (req, res) => {
     });
 });
 app.listen(8081, () => {
-  console.log('Server started on port 8080');
+  console.log('Server started on port 8081');
 });

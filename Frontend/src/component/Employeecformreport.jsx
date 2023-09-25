@@ -27,7 +27,7 @@ export default function Employeecformreport() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get('http://backend.chalanka.me/combinedData');
+        const res = await axios.get('http://localhost:8080/combinedData');
         setSearchResults(res.data);
         const monthSet = new Set();
         const yearSet = new Set();
@@ -61,7 +61,7 @@ export default function Employeecformreport() {
 
   const handleFilter = async () => {
     try {
-      const res = await axios.get('http://backend.chalanka.me/combinedData');
+      const res = await axios.get('http://localhost:8080/combinedData');
       const payments = res.data;
 
       let filteredResults = payments;
@@ -239,7 +239,7 @@ export default function Employeecformreport() {
     const confirmDelete = window.confirm('Are you sure you Save  this data ?');
     if (confirmDelete) {
       try {
-        const response = await axios.post('http://backend.chalanka.me/cform', {
+        const response = await axios.post('http://localhost:8080/cform', {
           bankName,
           branchNo,
           chequeNo,

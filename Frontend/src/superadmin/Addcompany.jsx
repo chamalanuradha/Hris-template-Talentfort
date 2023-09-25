@@ -18,7 +18,7 @@ export default function Addcompany() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://backend.chalanka.me/companies', companyData); // Pass companyData
+      await axios.post('http://localhost:8080/companies', companyData); // Pass companyData
       navigate('/companies');
     } catch (error) {
       console.log(error);

@@ -83,7 +83,7 @@ export default function Graph1() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://backend.chalanka.me/graph1');
+        const response = await axios.get('http://localhost:8080/graph1');
         const data = response.data;
 
         const categories = data.map((item) => item.leaveHours);
