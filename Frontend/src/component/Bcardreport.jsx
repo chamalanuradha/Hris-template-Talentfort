@@ -17,7 +17,7 @@ export default function Bcardreport() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/employees');
+        const res = await axios.get('http://backend.chalanka.me/employees');
         setSearchResults(res.data);
         const empnameSet = new Set();
         res.data.forEach((Employee) => {
@@ -41,7 +41,7 @@ export default function Bcardreport() {
 
   const handleFilter = async () => {
     try {
-      const res = await axios.get('http://localhost:8080/employees');
+      const res = await axios.get('http://backend.chalanka.me/employees');
       const Employees = res.data;
 
       let filteredResults = Employees;
@@ -89,11 +89,8 @@ export default function Bcardreport() {
         const startY = 30;
         const lineHeight = 15;
         const labelX = startX;
-        const label1X = startX + 50;
-        const label2X = startX + 60;
         const valueX = 160;
-        const value1X = 300;
-        const valueline = 245;
+       
       
       if (index !== 0) {
         PDF.addPage(); // Add a new page for each payslip, except the first one

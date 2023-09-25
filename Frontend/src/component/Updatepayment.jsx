@@ -25,7 +25,7 @@ export default function UpdatePayment() {
   useEffect(() => {
     const fetchPayment = async () => {
       try {
-        const Res = await axios.get(`http://localhost:8080/payments/${paymentId}`);
+        const Res = await axios.get(`http://backend.chalanka.me/payments/${paymentId}`);
         const { empNo, employeeName, salary, travellingDaily, farewell, travelling, dfarewell, attendingDays, date, epfNo} = Res.data;
         setPaymentData({
           empNo,
@@ -59,7 +59,7 @@ export default function UpdatePayment() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8080/payments/${paymentId}`, paymentData);
+      await axios.put(`http://backend.chalanka.me/payments/${paymentId}`, paymentData);
       alert('Payment updated successfully.'); // You can show a success message if needed.
         
       // Navigate to the previous page with a reload

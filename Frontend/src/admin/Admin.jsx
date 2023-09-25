@@ -19,7 +19,7 @@ export default function Admin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/employeecount'); 
+        const response = await axios.get('http://backend.chalanka.me/employeecount'); 
         const data = response.data;
         const count = data.employeeCount;
 
@@ -34,7 +34,7 @@ export default function Admin() {
   useEffect(()=> {
     const fetchAmount = async ()=> {
     try {
-      const response = await axios.get('http://localhost:8080/loanamount');
+      const response = await axios.get('http://backend.chalanka.me/loanamount');
       const data = response.data;
       const count =data.loanAmount;
       setLoanAmount(count);
@@ -48,7 +48,7 @@ export default function Admin() {
   useEffect(()=> {
     const fetchOvertime = async ()=> {
     try {
-      const res = await axios.get('http://localhost:8080/totalovertime');
+      const res = await axios.get('http://backend.chalanka.me/totalovertime');
       const data = res.data;
       const count =data.totalOvertime;
       setOvertime(count);
@@ -63,7 +63,7 @@ export default function Admin() {
   useEffect(()=> {
     const fetchLeaves = async ()=> {
     try {
-      const res = await axios.get('http://localhost:8080/totalleaves');
+      const res = await axios.get('http://backend.chalanka.me/totalleaves');
       const data = res.data;
       const count =data.totalLeaves;
       setLeaves(count);

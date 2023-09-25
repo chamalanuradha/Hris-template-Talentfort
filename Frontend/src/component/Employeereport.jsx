@@ -27,7 +27,7 @@ export default function Employeereport() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/employees');
+        const res = await axios.get('http://backend.chalanka.me/employees');
         setSearchResults(res.data);
         const departmentSet = new Set();
         const maritalStatusSet = new Set();
@@ -68,7 +68,7 @@ export default function Employeereport() {
 
   const handleFilter = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/employees');
+      const response = await axios.get('http://backend.chalanka.me/employees');
       const employees = response.data;
 
       let filteredResults = employees;

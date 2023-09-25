@@ -19,7 +19,7 @@ export default function Payments() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/combinedData');
+        const res = await axios.get('http://backend.chalanka.me/combinedData');
         setSearchResults(res.data);
         const monthSet = new Set();
         const yearSet = new Set();
@@ -53,7 +53,7 @@ export default function Payments() {
 
   const handleFilter = async () => {
     try {
-      const res = await axios.get('http://localhost:8080/combinedData');
+      const res = await axios.get('http://backend.chalanka.me/combinedData');
       const payments = res.data;
 
       let filteredResults = payments;
@@ -84,38 +84,38 @@ export default function Payments() {
   };
 
 
-  // const prepareCSVData = () => {
-  //   const csvData = searchResults.map((payment) =>
-  //     [
-  //       "0000",
-  //       payment.bankNo,
-  //       payment.branchNo,
-  //       payment.accountNo,
-  //       payment.accountName,
-  //       '23',
-  //       '00',
-  //       '0',
-  //       '000000',
-  //       payment.salary,
-  //       'SLR',
-  //       '7010',
-  //       '038',
-  //       '000014556622',
-  //       'abc Company',
-  //       'BOC boralla',
-  //       payment.date,
-  //       '000000'
-  //     ].join('')
-  //   );
+  const prepareCSVData = () => {
+    const csvData = searchResults.map((payment) =>
+      [
+        "0000",
+        payment.bankNo,
+        payment.branchNo,
+        payment.accountNo,
+        payment.accountName,
+        '23',
+        '00',
+        '0',
+        '000000',
+        payment.salary,
+        'SLR',
+        '7010',
+        '038',
+        '000014556622',
+        'abc Company',
+        'BOC boralla',
+        payment.date,
+        '000000'
+      ].join('')
+    );
   
-  //   // Join all the data lines into a single string with line breaks
-  //   const csvContent = csvData.join('\n');
+    // Join all the data lines into a single string with line breaks
+    const csvContent = csvData.join('\n');
   
-  //   // Add headers if needed
-  //   const csvWithHeaders = `${csvContent}`;
+    // Add headers if needed
+    const csvWithHeaders = `${csvContent}`;
   
-  //   return csvWithHeaders; // or csvContent if you don't need headers
-  // };
+    return csvWithHeaders; // or csvContent if you don't need headers
+  };
   
 
 
@@ -288,7 +288,14 @@ export default function Payments() {
   <button className='pdf' onClick={GeneratePDF}>Generate PDF</button>
   </div>
   <div>
- 
+  <CSVLink
+    data={prepareCSVData()} // Call prepareCSVData to get the formatted data
+    filename="Bankslip.csv"
+    className="csv"
+    target="_blank"
+  >
+    Genarate CSV
+  </CSVLink>
   </div>
 
 

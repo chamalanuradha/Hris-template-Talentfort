@@ -24,7 +24,7 @@ export default function AddPayment() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/employees');
+        const res = await axios.get('http://backend.chalanka.me/employees');
         const employees = res.data;
         setEmployeeOptions(employees);
       } catch (error) {
@@ -73,7 +73,7 @@ export default function AddPayment() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/payments', paymentData);
+      await axios.post('http://backend.chalanka.me/payments', paymentData);
       alert('Payment added successfully.'); // You can show a success message if needed.
         
       // Navigate to the previous page with a reload

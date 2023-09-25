@@ -12,7 +12,7 @@ export default function Loan() {
   useEffect(() => {
     const fetchLoans = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/loans');
+        const res = await axios.get('http://backend.chalanka.me/loans');
         setSearchResults(res.data);
       } catch (error) {
         console.log(error);
@@ -26,7 +26,7 @@ export default function Loan() {
     const confirmDelete = window.confirm("Are you sure you want to delete this loan?");
   if (confirmDelete) {
     try {
-      await axios.delete(`http://localhost:8080/loans/${id}`);
+      await axios.delete(`http://backend.chalanka.me/loans/${id}`);
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ export default function Loan() {
   };
   const handleSearch = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/loans');
+      const response = await axios.get('http://backend.chalanka.me/loans');
       const { data } = response;
 
       // Filter the payments whose employee names start with the search term

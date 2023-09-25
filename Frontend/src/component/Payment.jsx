@@ -11,7 +11,7 @@ export default function Payments() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/payments');
+        const res = await axios.get('http://backend.chalanka.me/payments');
         setSearchResults(res.data);
       } catch (error) {
         console.log(error);
@@ -25,7 +25,7 @@ export default function Payments() {
     const confirmDelete = window.confirm('Are you sure you want to delete this payment?');
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:8080/payments/${id}`);
+        await axios.delete(`http://backend.chalanka.me/payments/${id}`);
         window.location.reload();
       } catch (error) {
         console.log(error);
@@ -35,7 +35,7 @@ export default function Payments() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/payments');
+      const response = await axios.get('http://backend.chalanka.me/payments');
       const { data } = response;
 
       // Filter the payments whose employee names start with the search term
