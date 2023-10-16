@@ -87,7 +87,7 @@ export default function Superadminsidebar({ children }) {
     ];
   
   const handlelogout = () => {
-  axios.post('http://localhost:8080/logout')
+  axios.post('http://backend.chalanka.me/logout')
     .then(res => {
       console.log('Logged out successfully:', res.data);
       window.location.href = '/';

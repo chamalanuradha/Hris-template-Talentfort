@@ -12,7 +12,7 @@ export default function Overtime() {
   useEffect(() => {
     const fetchOvertimes = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/overtimes');
+        const res = await axios.get('http://backend.chalanka.me/overtimes');
         setSearchResults(res.data);
       } catch (error) {
         console.log(error);
@@ -26,7 +26,7 @@ export default function Overtime() {
     const confirmDelete = window.confirm("Are you sure you want to delete this overtime?");
   if (confirmDelete) {
     try {
-      await axios.delete(`http://localhost:8080/overtimes/${id}`);
+      await axios.delete(`http://backend.chalanka.me/overtimes/${id}`);
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ export default function Overtime() {
   };
    const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/overtimes`);
+      const response = await axios.get(`http://backend.chalanka.me/overtimes`);
       const { data } = response;
     
 

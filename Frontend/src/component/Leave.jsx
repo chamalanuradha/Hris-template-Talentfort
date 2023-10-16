@@ -12,7 +12,7 @@ export default function Leave() {
   useEffect(() => {
     const fetchLeaves = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/leaves');
+        const res = await axios.get('http://backend.chalanka.me/leaves');
         setSearchResults(res.data);
       } catch (error) {
         console.log(error);
@@ -26,7 +26,7 @@ export default function Leave() {
     const confirmDelete = window.confirm("Are you sure you want to delete this leave?");
   if (confirmDelete) {
     try {
-      await axios.delete(`http://localhost:8080/leaves/${id}`);
+      await axios.delete(`http://backend.chalanka.me/leaves/${id}`);
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ export default function Leave() {
   };
    const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/leaves`);
+      const response = await axios.get(`http://backend.chalanka.me/leaves`);
       const { data } = response;
 
 // Filter the payments whose employee names start with the search term

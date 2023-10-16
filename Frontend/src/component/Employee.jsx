@@ -12,7 +12,7 @@ export default function Employee() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/employees');
+        const res = await axios.get('http://backend.chalanka.me/employees');
         setSearchResults(res.data);
       } catch (error) {
         console.log(error);
@@ -25,7 +25,7 @@ export default function Employee() {
     const confirmDelete = window.confirm('Are you sure you want to delete this employee?');
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:8080/employees/${id}`);
+        await axios.delete(`http://backend.chalanka.me/employees/${id}`);
         window.location.reload();
       } catch (error) {
         console.log(error);
@@ -35,7 +35,7 @@ export default function Employee() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/employees');
+      const response = await axios.get('http://backend.chalanka.me/employees');
       const { data } = response;
 
       // Filter the employees whose names start with the search term

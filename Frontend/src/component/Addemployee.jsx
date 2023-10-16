@@ -72,7 +72,7 @@ export default function AddEmployee() {
     }
   
     try {
-      await axios.post('http://localhost:8080/employees', employee);
+      await axios.post('http://backend.chalanka.me/employees', employee);
       alert('Employee added successfully.'); // You can show a success message if needed.
   
       // Navigate to the previous page with a reload
@@ -85,7 +85,7 @@ export default function AddEmployee() {
     try {
       const fetchCompanies = async () => {
         try {
-          const response = await axios.get('http://localhost:8080/companies');
+          const response = await axios.get('http://backend.chalanka.me/companies');
           const companies = response.data;
           const companyNames = companies.map(company => company.companyName); // Using 'companyName' property from API response
           setCompanyNames(companyNames);

@@ -38,7 +38,7 @@ export default function Graph4() {
   useEffect(() => {
     const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:8080/graph4');
+          const response = await axios.get('http://backend.chalanka.me/graph4');
           const data = response.data;
       
           const sortedData = data.sort((a, b) => new Date(a.date) - new Date(b.date)); // Sort the data array by date in ascending order
