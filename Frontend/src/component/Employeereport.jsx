@@ -118,6 +118,18 @@ export default function Employeereport() {
     PDF.setFontSize(16);
 
     try {
+      const data = searchResults.map((employee) => [
+        employee.empNo,
+        employee.fullName,
+        employee.gender,
+        employee.dob,
+        employee.maritalStatus,
+        employee.currentAddress,
+        employee.phone,
+        employee.joinedDate,
+        employee.designation,
+        employee.department,
+      ]);
       const headers = [
         'Emp No',
         'Full Name',
@@ -130,17 +142,7 @@ export default function Employeereport() {
         'Designation',
         'Department',
       ];
-      const data = [];
-
-      const tableRows = document.querySelectorAll('.Dts');
-      tableRows.forEach((row) => {
-        const rowData = [];
-        const columns = row.querySelectorAll('td');
-        columns.forEach((column) => {
-          rowData.push(column.innerText);
-        });
-        data.push(rowData);
-      });
+     
 
       const customTitle = 'Employees Table';
       const headerMargin = 13; // Set the top margin for the header
