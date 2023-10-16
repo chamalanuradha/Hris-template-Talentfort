@@ -9,7 +9,7 @@ DB.connect();
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://chalanka.me',
+  origin: 'http://localhost:3000',
   credentials: true,
   exposedHeaders: ['Access-Control-Allow-Credentials'],
 }));
@@ -217,7 +217,6 @@ app.get('/companies', (req, res) => {
 });
 
 //Get method for update
-
 //get employee details for update
 app.get('/employees/:id', (req, res) => {
   const employeeId = req.params.id;
@@ -432,6 +431,9 @@ app.get('/users/:id', (req, res) => {
     });
 });
 
+
+
+//Add
 // ADD details to database
 app.post('/cform', (req,res)=>{
  const q = 'INSERT INTO cpayments (`chequeNo`,`bankName`,`branchNo`,`contributions`,`surcharges`,`totalRemittence`)  VALUES(?) ';
@@ -595,7 +597,6 @@ app.post('/overtimes', (req, res) => {
     });
 });
 //add leave details
-
 app.post('/leaves', (req, res) => {
   const q = "INSERT INTO leaves (empNo, employeeName,date, leaveHours, description ) VALUES (?, ?, ?, ?, ?)";
   const values = [
@@ -615,9 +616,7 @@ app.post('/leaves', (req, res) => {
       res.status(500).json({ error: 'Failed to add leave' });
     });
 });
-
 //add company
-
 app.post('/companies', (req, res) => {
   const q = "INSERT INTO companies (`companyName`) VALUES (?)";
   const values = [
@@ -649,6 +648,7 @@ app.post('/users', (req, res) => {
       res.status(500).json({ error: 'Failed to insert user' });
     });
 });
+
 
 // Update details to database
 //update employee details
@@ -731,7 +731,6 @@ app.put('/payments/:id', (req, res) => {
       res.status(500).json({ error: 'Failed to update payment details' });
     });
 });
-
 // update  loan details 
 app.put('/loans/:id', (req, res) => {
   const q = "UPDATE loans SET  empNo  = ?, employeeName = ?, amount = ?,  interestRate = ?, duration = ?  WHERE id = ?";
@@ -828,6 +827,7 @@ app.put('/users/:id', (req, res) => {
     })
   });
 
+
 //Delete details to database
 //delete employee details
 app.delete('/employees/:id', (req, res) => {
@@ -846,7 +846,6 @@ app.delete('/employees/:id', (req, res) => {
       res.status(500).json({ error: 'Failed to delete employee and related details' });
     });
 });
-
 //delete payment details
 app.delete('/payments/:id', (req, res) => {
   const paymentId = req.params.id;
@@ -887,7 +886,6 @@ app.delete('/overtimes/:id', (req, res) => {
       res.status(500).json({ error: 'Failed to delete overtime' });
     });
 });
-
 //delete leave details  
 app.delete('/leaves/:id', (req, res) => { 
   const q = "DELETE FROM leaves WHERE id = ?";
@@ -929,14 +927,17 @@ app.delete('/users/:id', (req, res) => {
     });
 })
 
+
 app.get('/combinedData', async (req, res) => {
   try {
     const query = `
-      SELECT p.id, p.empNo, p.epfNo, p.employeeName, p.salary, p.travellingDaily, 
+      SELECT p.id,
+       p.empNo, p.epfNo, p.employeeName, p.salary, p.travellingDaily, 
         p.farewell, p.travelling, p.dfarewell, p.epf8, p.etfContribution, p.netpaid, 
         p.totalSalaryExpense, p.attendingDays, p.date, p.monthName, p.additions, p.deductions,p.contributionTotal,
-        e.fullName, e.maritalStatus, e.gender, e.dob, e.nic, e.designation, e.joinedDate, e.department, 
-        e.currentAddress, e.phone, e.accountName, e.accountNo, e.bankName,e.bankNo, e.branchName, e.branchNo, e.companyName
+        SUBSTRING(e.fullName, 1, 20) AS displayName,
+        e.maritalStatus, e.gender, e.dob, e.nic, e.designation, e.joinedDate, e.department, 
+        e.currentAddress, e.phone, LPAD(e.accountNo, 12, '0') AS accountNo, e.bankName,e.bankNo, e.branchName, e.branchNo, e.companyName
       FROM payments AS p
       JOIN employees AS e ON p.empNo = e.empNo
     `;
@@ -949,8 +950,8 @@ app.get('/combinedData', async (req, res) => {
   }
 });
 
-//serch employee details
 
+//serch employee details
 app.get('/api/employees', (req, res) => {
   const searchTerm = req.query.search;
 
@@ -1280,6 +1281,6 @@ app.get('/totalleaves', (req, res) => {
       res.status(500).json({ error: 'Failed to retrieve totalLeaves' });
     });
 });
-app.listen(8081, () => {
-  console.log('Server started on port 8081');
+app.listen(8080, () => {
+  console.log('Server started on port 8080');
 });

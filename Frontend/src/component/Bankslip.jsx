@@ -129,7 +129,7 @@ export default function Payments() {
         payment.bankNo,
         payment.branchNo,
         payment.accountNo,
-        payment.accountName,
+        payment.displayName,
         payment.salary,
         payment.date,
       ]);
@@ -269,7 +269,7 @@ export default function Payments() {
               {searchResults.map((payment) => (
                 <tr key={payment.id}>
                   <td>{payment.empNo}</td>
-                  <td>{payment.accountName}</td>
+                  <td>{payment.displayName}</td>
                   <td>{payment.accountNo}</td>
                   <td>{payment.bankNo}</td>
                   <td>{payment.branchNo}</td>

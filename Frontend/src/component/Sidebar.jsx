@@ -96,7 +96,7 @@ export default function Sidebar({ children }) {
         <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
           <div className="top_section">
             <h4 style={{ display: isOpen ? "block" : "none" }} className="logo">Logo</h4>
-            <div style={{ marginLeft: isOpen ? "85px" : "2px" }} className="bars">
+            <div style={{ marginLeft: isOpen ? "85px" : "6px" }} className="bars">
               <FaBars onClick={toggle} />
             </div>
           </div>
