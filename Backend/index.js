@@ -832,11 +832,7 @@ app.put('/users/:id', (req, res) => {
 //delete employee details
 app.delete('/employees/:id', (req, res) => {
   const employeeId = req.params.id;
-  
-  const q = `
-    DELETE * FROM employees WHERE id = ?;
-  `;
-  
+  const q = "DELETE  FROM employees WHERE id = ?";
   DB.connection.promise().query(q, [employeeId])
     .then(([results]) => {
       res.json("Employee and related details deleted successfully");
@@ -848,10 +844,9 @@ app.delete('/employees/:id', (req, res) => {
 });
 //delete payment details
 app.delete('/payments/:id', (req, res) => {
-  const paymentId = req.params.id;
-
-  const q = "DELETE * FROM payments WHERE id = ?";
-  DB.connection.promise().query(q, [paymentId])
+  const q = "DELETE  FROM payments WHERE id = ?";
+  const values = req.params.id;
+  DB.connection.promise().query(q, [values])
     .then(([results]) => {
       res.json("Payment details deleted successfully");
     })
@@ -866,11 +861,11 @@ app.delete('/loans/:id', (req, res) => {
   const values = [req.params.id];
   DB.connection.promise().query(q, [values])
     .then(([results]) => {
-      res.json("Employee deleted successfully");
+      res.json("Loan deleted successfully");
     })
     .catch((error) => {
-      console.error('Error deleting employee:', error);
-      res.status(500).json({ error: 'Failed to delete employee' });
+      console.error('Error deleting loan:', error);
+      res.status(500).json({ error: 'Failed to delete loan' });
     });
 });
 //delete overtime details
